@@ -1,1 +1,93 @@
-/* This file intentionally left blank. */
+/* =========================
+   LEFT SIDEBAR
+   ========================= */
+
+/* Blue header area */
+.wy-side-nav-search {
+    background: #500000 !important;
+}
+
+/* Search box */
+.wy-side-nav-search input[type="text"] {
+    border-color: #500000;
+}
+
+/* Dark navigation section */
+.wy-nav-side {
+    background: #7a3b3b !important;
+}
+
+/* Navigation links */
+.wy-menu-vertical a {
+    color: #f5f5f5;
+}
+
+/* Hover */
+.wy-menu-vertical a:hover {
+    background: #500000;
+}
+
+/* Selected item */
+.wy-menu-vertical li.current > a {
+    background: #7a3b3b;
+    color: white;
+}
+
+/* Make all sidebar items the same color */
+.wy-menu-vertical li,
+.wy-menu-v*rtical li.current,
+.wy-menu-vertical li.current ul,
+.wy-menu-vertical li.current ul li {
+    background: #7a3b3b !important;
+}
+
+.wy-menu-vertical li a,
+.wy-menu-vertical li.current a {
+    background: #7a3b3b !important;
+    color: white !important;
+}
+
+/* =========================
+   MAIN CONTENT AREA
+   ========================= */
+
+/* Main page background */
+.wy-nav-content {
+    background: #faf8f6;
+    max-width: 800px;
+}
+
+/* Content wrapper */
+.wy-nav-content-wrap {
+    background: #f4f1ee;
+}
+
+/* =========================
+   BREADCRUMB BAR
+   ========================= */
+
+.wy-breadcrumbs {
+    background: transparent;
+}
+
+/* =========================
+   LINKS
+   ========================= */
+
+a {
+    color: #500000;
+}
+
+a:hover {
+    color: #7a3b3b;
+}
+
+/* Address right side stick out
+*/
+.wy-nav-side {
+    border-right: none !important;
+}
+
+.wy-menu-vertical li a {
+    border-right: none !important;
+}

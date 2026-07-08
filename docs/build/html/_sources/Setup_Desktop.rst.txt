@@ -28,7 +28,7 @@ you can send them an email that looks something like the following:
 
     The computer was already connected to Ethernet, so I believe network connectivity is not the issue. Could you please assist me in resolving this login problem?
 
-    Also, my advisor is Professor Adam Birchfield, and the serial number of the desktop is ECEN 3K3J9R3.
+    Also, my advisor is Professor Adam Birchfield, and the serial number of the desktop is ECEN [Serial Number].
 
     Please let me know if you need any additional information from my end.
 
