@@ -5,10 +5,9 @@
 
 Birchfield Research Group Starting Guide
 =====================================================
-This guide helps new members of the Birchfield Research Group get started
+This guide is intended to help new members of the Birchfield Research Group get started
 with the tools, workflows, and concepts used in our research.
 It provides a structured starting point and a reference as you begin your work.
-
 
 If you just started, I would recommend the doing the following in order:
 

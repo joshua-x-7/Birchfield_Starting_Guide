@@ -6,6 +6,16 @@
 .wy-side-nav-search {
     background: #500000 !important;
 }
+/* Prevent title block hover from changing */
+.wy-side-nav-search > a {
+    background: #500000 !important;
+    color: white !important;
+}
+
+.wy-side-nav-search > a:hover {
+    background: #7a3b3b !important;
+    color: white !important;
+}
 
 /* Search box */
 .wy-side-nav-search input[type="text"] {
@@ -24,28 +34,16 @@
 
 /* Hover */
 .wy-menu-vertical a:hover {
-    background: #500000;
+    background: #e9e1e1 !important;
+    color: #500000 !important;
 }
 
 /* Selected item */
 .wy-menu-vertical li.current > a {
-    background: #7a3b3b;
-    color: white;
-}
-
-/* Make all sidebar items the same color */
-.wy-menu-vertical li,
-.wy-menu-v*rtical li.current,
-.wy-menu-vertical li.current ul,
-.wy-menu-vertical li.current ul li {
-    background: #7a3b3b !important;
-}
-
-.wy-menu-vertical li a,
-.wy-menu-vertical li.current a {
     background: #7a3b3b !important;
     color: white !important;
 }
+
 
 /* =========================
    MAIN CONTENT AREA
@@ -90,4 +88,24 @@ a:hover {
 
 .wy-menu-vertical li a {
     border-right: none !important;
+}
+
+/* =========================
+   NOTES / ADMONITIONS
+   ========================= */
+
+/* Note body */
+.rst-content .note {
+    background: #e9e1e1 !important;
+}
+
+/* Note title bar */
+.rst-content .note .admonition-title {
+    background: #500000 !important;
+    color: white !important;
+}
+
+/* Little icon */
+.rst-content .note .admonition-title:before {
+    color: white !important;
 }
