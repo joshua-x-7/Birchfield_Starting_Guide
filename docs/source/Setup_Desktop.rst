@@ -78,7 +78,6 @@ login to Howdy), and click Login, a silent notification will be sent to your
 Duo Mobile (probably your smartphone) that you must approve. It should look something like the following:
 
 .. image:: /Images/VPN_Login_Duo.png
-   :scale: 25%
 
 Click **Approve**, and you should be taken to the webpage where you
 download Cisco Secure Client. Once the app is downloaded,
