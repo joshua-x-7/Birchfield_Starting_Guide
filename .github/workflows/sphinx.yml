@@ -27,6 +27,12 @@ jobs:
 
       - run: pip install sphinx
 
+      - run: pip install sphinx-rtd-theme
+
+      - run: pip install sphinx sphinx-copybutton
+
+      - run: pip install sphinx-new-tab-link
+
       - run: sphinx-build -b html docs/source docs/_build/html
 
       - uses: actions/upload-pages-artifact@v3
