@@ -31,3 +31,5 @@ html_css_files = ['custom.css']
 html_static_path = ['_static']
 
 pygments_style = 'one-dark'
+
+#pygments_style = 'paraiso-dark'

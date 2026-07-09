@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=3e69a11e" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=56c4699f" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=7b69da5f" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -165,15 +165,15 @@ Then, pip install ESA through the terminal:</p>
 </pre></div>
 </div>
 <p>Next, create a new Python script, and import the SimAuto Wrapper (SAW) class:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">from esa import SAW</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">esa</span><span class="w"> </span><span class="kn">import</span> <span class="n">SAW</span>
 </pre></div>
 </div>
 <p>and define a variable to store the file path to the case you stored, like this:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">case_path = r&quot;C:\Users\joshua_x\Documents\Research\Cases\Hawaii40_20231026.pwb&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">case_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\joshua_x\Documents\Research\Cases\Hawaii40_20231026.pwb&quot;</span>
 </pre></div>
 </div>
 <p>Then, we initialize a SAW instance, and “open the case”:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">saw = SAW(case_path)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">saw</span> <span class="o">=</span> <span class="n">SAW</span><span class="p">(</span><span class="n">case_path</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Next, we show how to read in some case data. We start with an example to read bus data.
@@ -222,7 +222,7 @@ the PowerWorld bus name for buses, which is <strong>“Bus.”</strong></p>
 <p>Once we determine a grid component’s PowerWorld object name, we retrieve what are called PowerWorld <strong>“key fields”</strong>, which are fields that
 are required to identify a grid component as seen below. For buses, the only key field is the bus number. This Excel sheet is super important,
 so make to save it!</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bus_key_fields = saw.get_key_field_list(&quot;Bus&quot;)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bus_key_fields</span> <span class="o">=</span> <span class="n">saw</span><span class="o">.</span><span class="n">get_key_field_list</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -242,12 +242,12 @@ We look in the <strong>Description</strong> column to find the row for voltage a
 and find that its PowerWorld name is <strong>“BusRad”</strong>. A similar principle can be applied to <em>any</em> field we want to determine the
 PowerWorld name for.</p>
 <p>We retrieve these values using the lines of code below:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">additional_bus_fields = [&quot;BusPUVolt&quot;, &quot;BusRad&quot;]</span>
-<span class="go">bus_fields = bus_key_fields + additional_bus_fields</span>
-<span class="go">df_bus = saw.GetParametersMultipleElement(&quot;Bus&quot;, bus_fields)</span>
-<span class="go">bus_nums = df_bus[&quot;BusNum&quot;].tolist()</span>
-<span class="go">bus_vpus = df_bus[&quot;BusPUVolt&quot;].tolist()</span>
-<span class="go">bus_angle_rads = df_bus[&quot;BusRad&quot;].tolist()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">additional_bus_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;BusPUVolt&quot;</span><span class="p">,</span> <span class="s2">&quot;BusRad&quot;</span><span class="p">]</span>
+<span class="n">bus_fields</span> <span class="o">=</span> <span class="n">bus_key_fields</span> <span class="o">+</span> <span class="n">additional_bus_fields</span>
+<span class="n">df_bus</span> <span class="o">=</span> <span class="n">saw</span><span class="o">.</span><span class="n">GetParametersMultipleElement</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span> <span class="n">bus_fields</span><span class="p">)</span>
+<span class="n">bus_nums</span> <span class="o">=</span> <span class="n">df_bus</span><span class="p">[</span><span class="s2">&quot;BusNum&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">bus_vpus</span> <span class="o">=</span> <span class="n">df_bus</span><span class="p">[</span><span class="s2">&quot;BusPUVolt&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">bus_angle_rads</span> <span class="o">=</span> <span class="n">df_bus</span><span class="p">[</span><span class="s2">&quot;BusRad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>We print some of these values out</p>

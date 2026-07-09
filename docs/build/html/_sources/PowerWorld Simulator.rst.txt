@@ -102,19 +102,19 @@ and also pip install numba (not to be confused with *numpy*)
 
 Next, create a new Python script, and import the SimAuto Wrapper (SAW) class:
 
-.. code-block:: console
+.. code-block:: python
 
    from esa import SAW
 
 and define a variable to store the file path to the case you stored, like this:
 
-.. code-block:: console
+.. code-block:: python
 
    case_path = r"C:\Users\joshua_x\Documents\Research\Cases\Hawaii40_20231026.pwb"
 
 Then, we initialize a SAW instance, and "open the case":
 
-.. code-block:: console
+.. code-block:: python
 
    saw = SAW(case_path)
 
@@ -159,7 +159,7 @@ Once we determine a grid component's PowerWorld object name, we retrieve what ar
 are required to identify a grid component as seen below. For buses, the only key field is the bus number. This Excel sheet is super important,
 so make to save it!
 
-.. code-block:: console
+.. code-block:: python
 
    bus_key_fields = saw.get_key_field_list("Bus")
 
@@ -183,7 +183,7 @@ PowerWorld name for.
 
 We retrieve these values using the lines of code below:
 
-.. code-block:: console
+.. code-block:: python
 
    additional_bus_fields = ["BusPUVolt", "BusRad"]
    bus_fields = bus_key_fields + additional_bus_fields
