@@ -33,11 +33,11 @@ jobs:
 
       - run: pip install sphinx-new-tab-link
 
-      - run: sphinx-build -b html docs/source docs/_build/html
-
       - run: pip install pillow
 
       - run: pip install sphinxcontrib-video
+
+      - run: sphinx-build -b html docs/source docs/_build/html
 
       - uses: actions/upload-pages-artifact@v3
         with:
