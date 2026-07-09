@@ -37,6 +37,8 @@ jobs:
 
       - run: pip install pillow
 
+      - run: pip install sphinxcontrib-video
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/_build/html
