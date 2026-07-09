@@ -12,17 +12,21 @@ It provides a structured starting point and a reference as you begin your work.
 If you just started, I would recommend the doing the following in order:
 
 1. Start by :doc:`Setup_Desktop`. Unless you have an incredibly
-fast laptop, you'll probably want to use our research group's desktops, which have lots or memory and are fast.
-You also probably want the option to access your desktop remotely, too.
+   fast laptop, you'll probably want to use our research group's desktops,
+   which have lots of memory and are fast. You also probably want the
+   option to access your desktop remotely, too.
 
-2. Get :doc:`PowerWorld Simulator` set up and become more familiar with :ref:`esa`
-once your desktop is ready to use.
+2. Get :doc:`PowerWorld Simulator` set up and become more familiar with
+   :ref:`esa` once your desktop is ready to use.
 
-3. Start forming your committee! For more degree related details, check out (degree page).
-    Degree page should include class information.
+3. Start forming your committee! For more degree related details,
+   check out :doc:`Degree_Planning`.
 
 .. toctree::
+   :hidden:
+
    Setup_Desktop
    PowerWorld Simulator
+   Degree_Planning
 
 
