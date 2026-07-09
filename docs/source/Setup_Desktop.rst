@@ -79,6 +79,7 @@ Duo Mobile (probably your smartphone) that you must approve. It should look some
 
 .. image:: /Images/VPN_Login_Duo.PNG
    :scale: 25%
+
 Click **Approve**, and you should be taken to the webpage where you
 download Cisco Secure Client. Once the app is downloaded,
 follow the rest of the instructions on the
