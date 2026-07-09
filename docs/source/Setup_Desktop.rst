@@ -97,7 +97,7 @@ For windows machines, search **"Remote Desktop Connection"** in the search bar, 
 up the app, which should look somewhat like the following:
 
 
-.. image:: /Images/Remote_Serial.jpg
+.. image:: /Images/Remote_Serial.JPG
    :scale: 70%
 
 In the space where it asks for **"Computer"**, enter **"ECEN Serial Number.engr.tamu.edu"**,
@@ -120,13 +120,13 @@ in the Windows search bar, and the serial number will be found under
 After clicking **"Connect"**, a window should appear asking for your credentials,
 and should look something like this.
 
-.. image:: /Images/Remote_Login.jpg
+.. image:: /Images/Remote_Login.JPG
    :scale: 70%
 
 Enter your NetID and password, click **"Remember Me"**, then click ok. Afterwards, you might
 get a security popup like the following:
 
-.. image:: /Images/Remote_Security.jpg
+.. image:: /Images/Remote_Security.JPG
    :scale: 70%
 
 Click **"Don't ask me again for connections to this computer**, and then
