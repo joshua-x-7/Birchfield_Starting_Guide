@@ -25,17 +25,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - run: pip install sphinx
-
-      - run: pip install sphinx-rtd-theme
-
-      - run: pip install sphinx sphinx-copybutton
-
-      - run: pip install sphinx-new-tab-link
-
-      - run: pip install pillow
-
-      - run: pip install sphinxcontrib-video
+      - run: pip install -r requirements.txt
 
       - run: sphinx-build -b html docs/source docs/_build/html
 
