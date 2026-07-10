@@ -74,7 +74,7 @@ For instance, if my "full" NetID is **"joshua_x@tamu.edu"**, I will just enter
    :scale: 100%
 
 After you enter your password on this webpage (same password to
-login to Howdy), and click Login, a silent notification will be sent to your
+login to Howdy), and click **Login**, a silent notification will be sent to your
 Duo Mobile (probably your smartphone) that you must approve. It should look something like the following:
 
 .. image:: /Images/VPN_Login_Duo.PNG
