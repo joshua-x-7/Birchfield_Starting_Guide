@@ -1,0 +1,6 @@
+sphinx
+sphinx-rtd-theme
+sphinx-copybutton
+sphinx-new-tab-link
+sphinxcontrib-video
+pillow
