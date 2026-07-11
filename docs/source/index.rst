@@ -1,26 +1,37 @@
-.. Birchfield Research Group Starter Guide documentation master file, created by
-   sphinx-quickstart on Tue Jun 30 15:59:41 2026.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Birchfield Research Group Starting Guide
+Birchfield Research Group Starter Guide
 =====================================================
-This guide is intended to help new members of the Birchfield Research Group get started
-with the tools, workflows, and concepts used in our research.
-It provides a structured starting point and a reference as you begin your work.
+Welcome to the Birchfield Research Group Starter Guide.
 
-If you just started, I would recommend the doing the following in order:
+This guide is intended to help new and existing group members get started with
+research-related software, computing resources, remote desktop access,
+PowerWorld and ESA, degree planning, course selection, and other resources
+commonly used within the group.
 
-1. Start by :doc:`Setup_Desktop`. Unless you have an incredibly
-   fast laptop, you'll probably want to use our research group's desktops,
-   which have lots of memory and are fast. You also probably want the
-   option to access your desktop remotely, too.
+If you are new to the group, we recommend working through the following sections
+in order:
 
-2. Get :doc:`PowerWorld Simulator` set up and become more familiar with
-   :ref:`esa` once your desktop is ready to use.
+1. Start with :doc:`Setup_Desktop`.
 
-3. Start forming your committee! For more degree related details,
-   check out :doc:`Degree_Planning`.
+   Unless you have a particularly/fast powerful laptop, you will likely want to use
+   one of the research group's desktop workstations. This section explains how
+   to log in to your desktop, configure VPN access, and connect remotely from
+   another computer.
+
+2. Set up :doc:`PowerWorld Simulator` and become familiar with
+   :ref:`esa`.
+
+   Many research projects in the group rely on PowerWorld, ESA, and related
+   power-system analysis tools. This section explains how to install,
+   configure, and begin using these tools.
+
+3. Review :doc:`Degree_Planning`.
+
+   This section contains information about degree requirements, committee
+   formation, and recommended courses that may be useful during your graduate
+   studies.
+
+For information on maintaining or updating this website, see
+:doc:`How to Edit Documentation`.
 
 .. toctree::
    :hidden:
@@ -28,5 +39,5 @@ If you just started, I would recommend the doing the following in order:
    Setup_Desktop
    PowerWorld Simulator
    Degree_Planning
-
+   How to Edit Documentation
 
