@@ -11,14 +11,14 @@ receive a message like **"The sign-in method you’re trying to use isn’t
 allowed. Please contact your network administrator,"** after trying to login,
 and you will probably have to contact ECEN IT at:
 
-.. code-block:: console
+.. code-block:: text
 
    ecen-helpdesk@tamu.edu
 
 Before emailing ECEN IT for help, also make sure the desktop is connected to ethernet. Then,
 you can send them an email that looks something like the following:
 
-.. code-block:: console
+.. code-block:: text
 
     Hi there,
 

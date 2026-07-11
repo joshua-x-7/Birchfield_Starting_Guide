@@ -49,15 +49,24 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Setup_Desktop.html">Setting Up Desktop and Remote Desktop Access</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PowerWorld Simulator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-and-unlocking-powerworld">Installing and Unlocking PowerWorld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-and-unlocking-powerworld">Installing and Unlocking PowerWorld</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unlocking-powerworld">Unlocking PowerWorld</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#esa">Easy Sim Auto (ESA)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#downloading-a-case">Downloading a Case</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comprehensive-esa-quickstart-guide">Comprehensive ESA Quickstart Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comprehensive-esa-quickstart-guide">Comprehensive ESA Quickstart Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installing-esa">Installing ESA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#opening-a-powerworld-case">Opening a PowerWorld Case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reading-bus-data">Reading Bus Data</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Degree_Planning.html">Degree Planning and Recommended Courses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="How%20to%20Edit%20Documentation.html">How to Update the Documentation</a></li>
 </ul>
 
         </div>
@@ -86,104 +95,172 @@
              
   <section id="powerworld-simulator">
 <h1>PowerWorld Simulator<a class="headerlink" href="#powerworld-simulator" title="Link to this heading"></a></h1>
-<p>Most of the Birchfield research group’s work involves PowerWorld Simulator,
-a software used to simulate power systems.
-Instead of using the PowerWorld GUI directly, we typically use
-<a class="reference external" href="https://mzy2240.github.io/ESA/html/index.html" rel="noreferrer" target="_blank">Easy Sim Auto (ESA)</a>
-, or Professor Birchfield’s <a class="reference external" href="https://joshua-x-7.github.io/GridWorkbench/html/index.html" rel="noreferrer" target="_blank">GridWorkbench</a>
-python packages to interact with PowerWorld
-through Python. At the time this guide was written, PowerWorld does NOT run on mac OS: you will
-need a windows machine. 😢</p>
-<section id="installing-and-unlocking-powerworld">
-<h2>Installing and Unlocking PowerWorld<a class="headerlink" href="#installing-and-unlocking-powerworld" title="Link to this heading"></a></h2>
-<p>First, install PowerWorld by going to the
-<a class="reference external" href="https://www.powerworld.com/downloadpurchase/software-patches" rel="noreferrer" target="_blank">PowerWorld Download Page.</a></p>
-<p>Then, go to the <a class="reference external" href="https://drive.google.com/drive/folders/1o0bbcucdgAUKT8t7aMC09aBjiZRzN8ri" rel="noreferrer" target="_blank">PowerWorld Credentials File</a>
-and open <strong>“Notes.txt”</strong>, which should be stored in the group’s shared Google Drive.
-Enter the user name and password from this file on the PowerWorld download page,
-and your first and last name and email. Click submit when you’ve entered all requested fields.</p>
-<p>The webpage should look like the following</p>
-<img alt="_images/PW_Download_Default.png" src="_images/PW_Download_Default.png" />
-<p>Scroll down to the part of the page where there are hyperlinks in the form of
-<strong>Version XX Installation/Patch MSI, and Version XX Hardware Key Drivers</strong>.
-Click on the latest (highest number) hyperlink that ends with Installation/Patch MSI, and
-wait for the installer to download. Once the installer has downloaded, go to your downloads folder
-and double click on the file called <strong>“pw24FullSimulatorSetup”</strong> to start installation.
-Accept the license agreement, and then click install. Once installation is done, click finish.</p>
+<p>Much of the Birchfield Research Group’s research relies on PowerWorld
+Simulator, a software package used to model and simulate electric power
+systems.</p>
+<p>Although PowerWorld includes a graphical user interface (GUI), much of our
+work is performed through Python automation of PowerWorld. To automate simulations and analyses, we
+typically use one of the following packages:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mzy2240.github.io/ESA/html/index.html" rel="noreferrer" target="_blank">Easy Sim Auto (ESA)</a></p></li>
+<li><p><a class="reference external" href="https://joshua-x-7.github.io/GridWorkbench/html/index.html" rel="noreferrer" target="_blank">GridWorkbench</a></p></li>
+</ul>
+<p>Both packages provide a Python interface to PowerWorld.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Even though you have installed PowerWorld, you most likely still cannnot use it at this point
-because the license is locked!</p>
+<p>At the time this guide was written, PowerWorld does not run on macOS.
+A Windows machine is required to run PowerWorld. 😢</p>
 </div>
-<p>To unlock the license, go to the windows search bar, type in <strong>“Simulator”</strong>, and click on the
-software that looks like the following:</p>
-<a class="reference internal image-reference" href="_images/PW_Search_Bar.jpg"><img alt="_images/PW_Search_Bar.jpg" height="467" src="_images/PW_Search_Bar.jpg" width="453" />
-</a>
-<p>Once you open PowerWorld, you should get a notifcation telling you that PowerWorld is locked.
-Go to <a class="reference external" href="https://www.powerworld.com/download-purchase/software-keys" rel="noreferrer" target="_blank">Software Keys page</a>
-to get the key to unlock the license. Enter the same username and password to download PowerWorld, and for the
-Machine/Lock code, go to the window that looks like the following</p>
+<section id="installing-and-unlocking-powerworld">
+<h2>Installing and Unlocking PowerWorld<a class="headerlink" href="#installing-and-unlocking-powerworld" title="Link to this heading"></a></h2>
+<p>The first step is to install PowerWorld Simulator.</p>
+<ol class="arabic simple">
+<li><p>Go to the
+<a class="reference external" href="https://www.powerworld.com/downloadpurchase/software-patches" rel="noreferrer" target="_blank">PowerWorld Download Page</a>.</p></li>
+<li><p>Open the
+<a class="reference external" href="https://drive.google.com/drive/folders/1o0bbcucdgAUKT8t7aMC09aBjiZRzN8ri" rel="noreferrer" target="_blank">PowerWorld Credentials Folder</a>
+in the group’s shared Google Drive.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">Notes.txt</span></code> and locate the PowerWorld download credentials.</p></li>
+<li><p>Enter the username and password from <code class="docutils literal notranslate"><span class="pre">Notes.txt</span></code> on the PowerWorld
+download page.</p></li>
+<li><p>Enter your name and email address, then click <strong>Submit</strong>.</p></li>
+</ol>
+<p>The webpage should look similar to the image below:</p>
+<img alt="_images/PW_Download_Default.png" src="_images/PW_Download_Default.png" />
+<p>After signing in, scroll down to the downloads section.</p>
+<p>Look for the most recent entry labeled:</p>
+<ul class="simple">
+<li><p><strong>Version XX Installation/Patch MSI</strong></p></li>
+</ul>
+<p>where <code class="docutils literal notranslate"><span class="pre">XX</span></code> is the latest available version number.</p>
+<p>Download the installer, then open it from your Downloads folder. The installer
+name will typically look something like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pw24FullSimulatorSetup
+</pre></div>
+</div>
+<p>Accept the license agreement and proceed through the installation wizard.
+Once installation is complete, click <strong>Finish</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Installing PowerWorld does not automatically activate the license.
+The software must still be unlocked before it can be used.</p>
+</div>
+<section id="unlocking-powerworld">
+<h3>Unlocking PowerWorld<a class="headerlink" href="#unlocking-powerworld" title="Link to this heading"></a></h3>
+<p>After installation, open PowerWorld Simulator.</p>
+<p>You will likely receive a message indicating that the software is locked.
+To obtain a license key:</p>
+<ol class="arabic simple">
+<li><p>Visit the
+<a class="reference external" href="https://www.powerworld.com/download-purchase/software-keys" rel="noreferrer" target="_blank">PowerWorld Software Keys Page</a>.</p></li>
+<li><p>Sign in using the same username and password used to download PowerWorld.</p></li>
+<li><p>In PowerWorld, locate the <strong>Machine ID</strong> field shown below:</p></li>
+</ol>
 <img alt="_images/Machine_ID_Example.jpg" src="_images/Machine_ID_Example.jpg" />
-<p>and click <strong>“Copy to Clipboard”</strong>
-to copy the machine ID. Fill out the rest of the requested information, and do not click
-<strong>“Postpone Upgrade.”</strong> Click submit, and then download the software key. Go back to the window where you copied
-the machine ID, click <strong>“Browse”</strong>, and select the software key you just downloaded. Then,
-click <strong>“Unlock All Users”</strong> if you are able to, and then PowerWorld should be unlocked!</p>
+<ol class="arabic" start="4">
+<li><p>Click <strong>Copy to Clipboard</strong> to copy the Machine ID.</p></li>
+<li><p>Paste the Machine ID into the <strong>Machine/Lock Code</strong> field on the Software
+Keys webpage.</p></li>
+<li><p>Complete the remaining requested information and click <strong>Submit</strong>.</p>
+<p>Do not click <strong>Postpone Upgrade</strong>.</p>
+</li>
+<li><p>Download the generated software key.</p></li>
+<li><p>Return to the PowerWorld window, click <strong>Browse</strong>, and select the software
+key that was just downloaded.</p></li>
+<li><p>If available, click <strong>Unlock All Users</strong>.</p></li>
+</ol>
+<p>PowerWorld should now be unlocked and ready to use.</p>
+</section>
 </section>
 <section id="esa">
 <span id="id1"></span><h2>Easy Sim Auto (ESA)<a class="headerlink" href="#esa" title="Link to this heading"></a></h2>
-<p>Once PowerWorld is unlocked, let’s learn how to use ESA. ESA is a Python package
-that is easier to use than PowerWorld’s regular SimAuto Python interface package,
-and is utilized to automate grid simulations.</p>
+<p>Now that PowerWorld is installed and unlocked, we can begin using ESA.</p>
+<p><a class="reference external" href="https://mzy2240.github.io/ESA/html/index.html" rel="noreferrer" target="_blank">Easy Sim Auto (ESA)</a>
+is a Python package that provides a convenient interface to PowerWorld
+Simulator. Many research projects in the Birchfield Research Group use ESA to
+automate simulations, retrieve data, and perform large numbers of studies
+efficiently.</p>
+<p>Compared to PowerWorld’s traditional SimAuto interface, ESA is generally easier
+to learn and use.</p>
 <section id="downloading-a-case">
 <h3>Downloading a Case<a class="headerlink" href="#downloading-a-case" title="Link to this heading"></a></h3>
-<p>Before using ESA, we must first download a case. In this guide, we download
-the <a class="reference external" href="https://electricgrids.engr.tamu.edu/hawaii40/" rel="noreferrer" target="_blank">Hawaii Synthetic Case</a> from the
-Texas A&amp;M Electric Grid Dataste repository. Many of the studies you conduct will use the
-synthetic cases from this repository. After downloading the zip file, and opening it,
-you will see many files, but the only one we use has the <strong>“PowerWorld Binary”</strong>,
-or <strong>“.PWB/.pwb”</strong> type. An example of the Hawaii case is shown below,
-with a red box around it. Models of electric grids in PowerWorld are PWB type,
-and we will ignore the rest of the files in the downloaded folder, for now: they
-are not PowerWorld files, and not compatible with it.</p>
+<p>Before using ESA, you will need a PowerWorld case.</p>
+<p>For this guide, we will use the
+<a class="reference external" href="https://electricgrids.engr.tamu.edu/hawaii40/" rel="noreferrer" target="_blank">Hawaii Synthetic Case</a>
+from the Texas A&amp;M Electric Grid Test Case Repository.</p>
+<p>After downloading the ZIP file and extracting it, you will see many files.
+For now, the only file we need is the PowerWorld case file, which has a
+<code class="docutils literal notranslate"><span class="pre">.PWB</span></code> (or <code class="docutils literal notranslate"><span class="pre">.pwb</span></code>) extension.</p>
+<p>An example is shown below, with the PowerWorld case highlighted in red:</p>
 <a class="reference internal image-reference" href="_images/HI_Download_Folder_Example.png"><img alt="_images/HI_Download_Folder_Example.png" height="348" src="_images/HI_Download_Folder_Example.png" width="631" />
 </a>
-<p>I would suggest moving/copying this case in a folder designated for PowerWorld cases.</p>
+<p>The remaining files can be ignored for now. Most are not PowerWorld case
+files and are not needed for the examples in this guide.</p>
+<p>We recommend creating a dedicated folder to store PowerWorld cases and moving
+the <code class="docutils literal notranslate"><span class="pre">.pwb</span></code> file there.</p>
 </section>
 <section id="comprehensive-esa-quickstart-guide">
 <h3>Comprehensive ESA Quickstart Guide<a class="headerlink" href="#comprehensive-esa-quickstart-guide" title="Link to this heading"></a></h3>
-<p>ESA includes its own tutorial, which provides a good overview of the software.
-However, it can be difficult for new students to follow because some details are left unexplained.
-This guide assumes no prior experience with PowerWorld and is intended to bridge the gaps in the
-<a class="reference external" href="https://mzy2240.github.io/ESA/html/quick_start.html" rel="noreferrer" target="_blank">ESA Quick Start Guide</a>,
-which we still recommend you read.</p>
-<p>First, open a Python IDE (Integrated Development Environment) such as PyCharm or VSCode.
-Then, pip install ESA through the terminal:</p>
+<p>The official
+<a class="reference external" href="https://mzy2240.github.io/ESA/html/quick_start.html" rel="noreferrer" target="_blank">ESA Quick Start Guide</a>
+provides a good introduction to ESA and is still recommended reading.</p>
+<p>However, the tutorial leaves out several details that are important for
+first-time users. This section is intended to supplement the official guide by
+providing additional explanation and context where needed.</p>
+<section id="installing-esa">
+<h4>Installing ESA<a class="headerlink" href="#installing-esa" title="Link to this heading"></a></h4>
+<p>Open a Python IDE such as PyCharm or VS Code.</p>
+<p>Next, install ESA:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install ESA</span>
 </pre></div>
 </div>
-<p>and also pip install numba (not to be confused with <em>numpy</em>)</p>
+<p>ESA also requires the Numba package:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install numba</span>
 </pre></div>
 </div>
-<p>Next, create a new Python script, and import the SimAuto Wrapper (SAW) class:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Numba is a separate package from NumPy. Be careful not to confuse the two.</p>
+</div>
+</section>
+<section id="opening-a-powerworld-case">
+<h4>Opening a PowerWorld Case<a class="headerlink" href="#opening-a-powerworld-case" title="Link to this heading"></a></h4>
+<p>Create a new Python script and import the SimAuto Wrapper (SAW) class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">esa</span><span class="w"> </span><span class="kn">import</span> <span class="n">SAW</span>
 </pre></div>
 </div>
-<p>and define a variable to store the file path to the case you stored, like this:</p>
+<p>Next, create a variable that stores the path to your PowerWorld case:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">case_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\joshua_x\Documents\Research\Cases\Hawaii40_20231026.pwb&quot;</span>
 </pre></div>
 </div>
-<p>Then, we initialize a SAW instance, and “open the case”:</p>
+<p>The exact file path will depend on where you stored the case on your computer.</p>
+<p>To open the case, initialize a <code class="docutils literal notranslate"><span class="pre">SAW</span></code> object:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">saw</span> <span class="o">=</span> <span class="n">SAW</span><span class="p">(</span><span class="n">case_path</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Next, we show how to read in some case data. We start with an example to read bus data.
-We will demonstrate how to retreive per-unit bus voltage and bus voltage angles.</p>
-<p>First, we must determine what the name of a grid component (bus, transmission line, etc are referred to as grid components) is in
-PowerWorld, which is needed later on. For most scenarios, the table below should suffice:</p>
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Grid Component PowerWorld Names</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<p>Once this line executes successfully, ESA will launch PowerWorld in the
+background and open the specified case.</p>
+</section>
+<section id="reading-bus-data">
+<h4>Reading Bus Data<a class="headerlink" href="#reading-bus-data" title="Link to this heading"></a></h4>
+<p>Now that the case is open, let’s retrieve some information from it.</p>
+<p>In this example, we will retrieve:</p>
+<ul class="simple">
+<li><p>Bus numbers</p></li>
+<li><p>Per-unit bus voltages</p></li>
+<li><p>Bus voltage angles (radians)</p></li>
+</ul>
+<section id="object-types">
+<h5>Object Types<a class="headerlink" href="#object-types" title="Link to this heading"></a></h5>
+<p>Before retrieving data, we must understand how ESA identifies different types
+of grid components.</p>
+<p>In PowerWorld, each type of object has an associated object name. Examples of
+grid components include buses, generators, transmission lines, loads, and
+substations. When retrieving data through ESA, we must specify the
+corresponding PowerWorld object name.</p>
+<p>For most situations, the table below contains the object names you will need:</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Grid Component PowerWorld Names</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 28.6%" />
 <col style="width: 71.4%" />
@@ -211,64 +288,132 @@ PowerWorld, which is needed later on. For most scenarios, the table below should
 </tr>
 </tbody>
 </table>
-<p>To get the full list of PowerWorld names of object types/grid components, we need to get the
-Excel sheet for PowerWorld object fields. First, we open up PowerWorld. Then, we go to the <strong>“Window”</strong> tab, as
-highlighted in green in the image below:</p>
+<p>The table above is sufficient for many common tasks. However, PowerWorld
+contains many additional object types.</p>
+<p>To view the complete list of PowerWorld object names, open PowerWorld and
+navigate to the <strong>Window</strong> tab, highlighted in green below:</p>
 <a class="reference internal image-reference" href="_images/PW_Export_Object_Fields.png"><img alt="_images/PW_Export_Object_Fields.png" height="512" src="_images/PW_Export_Object_Fields.png" width="958" />
 </a>
-<p>Then, under <strong>“Export Case Object Fields”</strong> highlighted in red, select <strong>“Send to Excel”</strong>, and the Excel sheet should open.
-The PowerWorld names of objects are given in the column called <strong>“Object Type”</strong>, as seen below. This example shows
-the PowerWorld bus name for buses, which is <strong>“Bus.”</strong></p>
+<p>Under <strong>Export Case Object Fields</strong>, highlighted in red, select
+<strong>Send to Excel</strong>.</p>
+<p>PowerWorld will open an Excel spreadsheet containing information about all
+available object types and their associated fields.</p>
+<p>The <strong>Object Type</strong> column contains the PowerWorld names used when interacting
+with ESA. For example, the object name for buses is <strong>Bus</strong>, as shown below:</p>
 <a class="reference internal image-reference" href="_images/Search_For_Bus2.png"><img alt="_images/Search_For_Bus2.png" height="550" src="_images/Search_For_Bus2.png" width="1395" />
 </a>
-<p>Once we determine a grid component’s PowerWorld object name, we retrieve what are called PowerWorld <strong>“key fields”</strong>, which are fields that
-are required to identify a grid component as seen below. For buses, the only key field is the bus number. This Excel sheet is super important,
-so make to save it!</p>
+</section>
+<section id="key-fields">
+<h5>Key Fields<a class="headerlink" href="#key-fields" title="Link to this heading"></a></h5>
+<p>Once we know an object’s PowerWorld name, the next step is to determine its
+<strong>key fields</strong>.</p>
+<p>A key field uniquely identifies a specific object within the power system.
+For example, a bus is uniquely identified by its bus number.</p>
+<p>The following command retrieves the key fields associated with buses:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bus_key_fields</span> <span class="o">=</span> <span class="n">saw</span><span class="o">.</span><span class="n">get_key_field_list</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>For buses, the returned key field is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;BusNum&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Notice that the field is called <code class="docutils literal notranslate"><span class="pre">BusNum</span></code>, not <code class="docutils literal notranslate"><span class="pre">Bus</span></code> or <code class="docutils literal notranslate"><span class="pre">BusNumber</span></code>.
+This naming convention is specific to PowerWorld and may not always be obvious,
+which is why it is useful to retrieve the key fields programmatically instead
+of guessing their names.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The case (upper or lower) doesn’t mattter for
-PowerWorld object names in the <em>get_key_field_list</em> function.</p>
+<p>PowerWorld object names are not case-sensitive when used with
+<code class="docutils literal notranslate"><span class="pre">get_key_field_list()</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">&quot;Bus&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bus&quot;</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">&quot;BUS&quot;</span></code> will produce the same result.</p>
 </div>
-<p>We also want to get the bus voltages and angles, so we must specify those fields, too.
-These fields have their own names in PowerWorld, too. In the PowerWorld objects Excel sheet,
-(same one used to determine grid component names) the PowerWorld field names are given in the
-<strong>“Variable Name”</strong> column highlighted in blue, and the variable’s description is found in the <strong>“Description”</strong>
-columnm highlighted in purple, as seen below:</p>
-<a class="reference internal image-reference" href="_images/Variable_Name_Description.png"><img alt="_images/Variable_Name_Description.png" height="528" src="_images/Variable_Name_Description.png" width="1237" />
+<p>Save the Excel spreadsheet for future reference.</p>
+<p>It contains all PowerWorld object types, key fields, and variable names,
+making it one of the most useful references when working with ESA. Whenever you
+are unsure of a PowerWorld name, consult this spreadsheet first.</p>
+</section>
+<section id="variable-names">
+<h5>Variable Names<a class="headerlink" href="#variable-names" title="Link to this heading"></a></h5>
+<p>Now that we know how to identify buses, we can request additional information
+about them.</p>
+<p>In this example, we would like to retrieve:</p>
+<ul class="simple">
+<li><p>Per-unit bus voltage</p></li>
+<li><p>Bus voltage angle (radians)</p></li>
+</ul>
+<p>Just as PowerWorld assigns names to object types, it also assigns names to
+fields associated with those objects. These names are required whenever data
+is retrieved through ESA.</p>
+<p>To find a field’s PowerWorld name, return to the same Excel spreadsheet that
+was generated using <strong>Export Case Object Fields</strong>.</p>
+<p>In the spreadsheet:</p>
+<ul class="simple">
+<li><p>The <strong>Variable Name</strong> column contains the PowerWorld field names.</p></li>
+<li><p>The <strong>Description</strong> column explains what each field represents.</p></li>
+</ul>
+<p>An example is shown below:</p>
+<a class="reference internal image-reference" href="_images/Variable_Name_Description.png"><img alt="_images/Variable_Name_Description.png" height="524" src="_images/Variable_Name_Description.png" width="1173" />
 </a>
-<p>For our scenario, the bus per-unit voltage PowerWorld name is <strong>“BusPUVolt”</strong>, which is highlighted in red in the image above.
-We look in the <strong>Description</strong> column to find the row for voltage angle in radians, look in the <strong>Variable Name</strong> column,
-and find that its PowerWorld name is <strong>“BusRad”</strong>. A similar principle can be applied to <em>any</em> field we want to determine the
-PowerWorld name for.</p>
-<p>We retrieve these values using the lines of code below:</p>
+<p>For this example, the PowerWorld name for per-unit bus voltage is
+<code class="docutils literal notranslate"><span class="pre">BusPUVolt</span></code>. This field is highlighted in red in the image above.</p>
+<p>To obtain bus voltage angle in radians, locate the corresponding description
+in the <strong>Description</strong> column. The associated PowerWorld field name is
+<code class="docutils literal notranslate"><span class="pre">BusRad</span></code>.</p>
+<p>As with object types and key fields, these names are not always obvious.
+Whenever you need to retrieve data from PowerWorld, it is generally best to
+consult the spreadsheet instead of guessing the field name.</p>
+</section>
+<section id="retrieving-data">
+<h5>Retrieving Data<a class="headerlink" href="#retrieving-data" title="Link to this heading"></a></h5>
+<p>We can now retrieve the bus data from PowerWorld.</p>
+<p>First, specify the additional fields we would like to retrieve:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">additional_bus_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;BusPUVolt&quot;</span><span class="p">,</span> <span class="s2">&quot;BusRad&quot;</span><span class="p">]</span>
-<span class="n">bus_fields</span> <span class="o">=</span> <span class="n">bus_key_fields</span> <span class="o">+</span> <span class="n">additional_bus_fields</span>
-<span class="n">df_bus</span> <span class="o">=</span> <span class="n">saw</span><span class="o">.</span><span class="n">GetParametersMultipleElement</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span> <span class="n">bus_fields</span><span class="p">)</span>
-<span class="n">bus_nums</span> <span class="o">=</span> <span class="n">df_bus</span><span class="p">[</span><span class="s2">&quot;BusNum&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Next, combine these fields with the key fields:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bus_fields</span> <span class="o">=</span> <span class="n">bus_key_fields</span> <span class="o">+</span> <span class="n">additional_bus_fields</span>
+</pre></div>
+</div>
+<p>Finally, retrieve the data from PowerWorld:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_bus</span> <span class="o">=</span> <span class="n">saw</span><span class="o">.</span><span class="n">GetParametersMultipleElement</span><span class="p">(</span><span class="s2">&quot;Bus&quot;</span><span class="p">,</span> <span class="n">bus_fields</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The returned object is a Pandas DataFrame containing one row for each bus and
+one column for each requested field.</p>
+<p>To work with the data more easily, we can convert the DataFrame columns into
+Python lists:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bus_nums</span> <span class="o">=</span> <span class="n">df_bus</span><span class="p">[</span><span class="s2">&quot;BusNum&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">bus_vpus</span> <span class="o">=</span> <span class="n">df_bus</span><span class="p">[</span><span class="s2">&quot;BusPUVolt&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">bus_angle_rads</span> <span class="o">=</span> <span class="n">df_bus</span><span class="p">[</span><span class="s2">&quot;BusRad&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>We print some of these values out</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bus number = 1, per-unit voltage = 0.9935, voltage angle degrees = -1.12</span>
-<span class="go">bus number = 2, per-unit voltage = 0.9912, voltage angle degrees = -3.93</span>
-<span class="go">bus number = 3, per-unit voltage = 0.9845, voltage angle degrees = -4.73</span>
-<span class="go">bus number = 4, per-unit voltage = 0.9788, voltage angle degrees = -5.75</span>
-<span class="go">bus number = 5, per-unit voltage = 0.9890, voltage angle degrees = -2.07</span>
-<span class="go">bus number = 6, per-unit voltage = 0.9812, voltage angle degrees = -5.53</span>
-<span class="go">bus number = 7, per-unit voltage = 0.9806, voltage angle degrees = -5.67</span>
-<span class="go">bus number = 8, per-unit voltage = 0.9786, voltage angle degrees = -5.70</span>
-<span class="go">bus number = 9, per-unit voltage = 0.9868, voltage angle degrees = -2.55</span>
-<span class="go">bus number = 10, per-unit voltage = 0.9809, voltage angle degrees = -5.65</span>
+</section>
+<section id="verifying-results">
+<h5>Verifying Results<a class="headerlink" href="#verifying-results" title="Link to this heading"></a></h5>
+<p>As a quick sanity check, we can print a few of the retrieved values:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bus number = 1, per-unit voltage = 0.9935, voltage angle degrees = -1.12
+bus number = 2, per-unit voltage = 0.9912, voltage angle degrees = -3.93
+bus number = 3, per-unit voltage = 0.9845, voltage angle degrees = -4.73
+bus number = 4, per-unit voltage = 0.9788, voltage angle degrees = -5.75
+bus number = 5, per-unit voltage = 0.9890, voltage angle degrees = -2.07
+bus number = 6, per-unit voltage = 0.9812, voltage angle degrees = -5.53
+bus number = 7, per-unit voltage = 0.9806, voltage angle degrees = -5.67
+bus number = 8, per-unit voltage = 0.9786, voltage angle degrees = -5.70
+bus number = 9, per-unit voltage = 0.9868, voltage angle degrees = -2.55
+bus number = 10, per-unit voltage = 0.9809, voltage angle degrees = -5.65
 </pre></div>
 </div>
-<p>and confirm that they are, in fact, the same as those
-from the PowerWorld GUI:</p>
+<p>To verify that ESA is returning the correct information, compare the results
+against the values shown directly in the PowerWorld GUI.</p>
+<p>The image below shows the same bus voltage magnitudes and voltage angles
+displayed within PowerWorld:</p>
 <a class="reference internal image-reference" href="_images/Bus_GUI_Data.png"><img alt="_images/Bus_GUI_Data.png" height="778" src="_images/Bus_GUI_Data.png" width="1428" />
 </a>
+<p>Notice that the values reported by ESA match those shown in PowerWorld.</p>
+<p>This comparison provides confidence that we are retrieving the desired fields
+correctly and interpreting them as intended.</p>
+</section>
+</section>
 </section>
 </section>
 </section>

@@ -12,7 +12,7 @@ in order:
 
 1. Start with :doc:`Setup_Desktop`.
 
-   Unless you have a particularly/fast powerful laptop, you will likely want to use
+   Unless you have a particularly fast/powerful laptop, you will likely want to use
    one of the research group's desktop workstations. This section explains how
    to log in to your desktop, configure VPN access, and connect remotely from
    another computer.
