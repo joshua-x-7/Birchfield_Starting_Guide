@@ -41,3 +41,9 @@ For information on maintaining or updating this website, see
    Degree_Planning
    How to Edit Documentation
 
+If you identify any inaccuracies, have comments,
+or would like to provide feedback, please contact us at:
+
+.. code-block:: text
+
+    joshuaxia7@gmail.com.
